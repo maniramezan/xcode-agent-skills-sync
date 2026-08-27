@@ -82,6 +82,10 @@ Restart Copilot CLI, then use `/sync-xcode-skills`.
 
 The exported skills use the standard `SKILL.md` format. Their content remains owned by the installed Xcode; this repository only supplies installation and refresh adapters.
 
+## Contributing with AI agents
+
+The repository's shared agent contract is [AGENTS.md](AGENTS.md). Claude Code, Gemini CLI, OpenCode, and GitHub Copilot CLI each have a small native guidance entry point that refers to the same contract.
+
 ## License
 
 MIT. Xcode-exported skills are not redistributed by this repository.
