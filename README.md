@@ -21,12 +21,10 @@ xcrun agent skills export --help
 
 ## Install
 
-Replace `OWNER/REPO` with this repository after it has been pushed to GitHub.
-
 ### Codex
 
 ```sh
-git clone https://github.com/OWNER/REPO.git ~/Developer/xcode-agent-skills-sync
+git clone https://github.com/maniramezan/xcode-agent-skills-sync.git ~/Developer/xcode-agent-skills-sync
 codex plugin marketplace add ~/Developer/xcode-agent-skills-sync
 codex plugin add xcode-skills-sync@xcode-agent-skills-sync
 ```
@@ -38,7 +36,7 @@ Codex marketplaces currently use a local marketplace path, so cloning the reposi
 ### Claude Code
 
 ```sh
-claude plugin marketplace add https://github.com/OWNER/REPO
+claude plugin marketplace add https://github.com/maniramezan/xcode-agent-skills-sync
 claude plugin install xcode-skills-sync@xcode-agent-skills-sync
 ```
 
@@ -47,7 +45,7 @@ Restart Claude Code, then use `/sync-xcode-skills`.
 ### Gemini CLI
 
 ```sh
-gemini extensions install https://github.com/OWNER/REPO
+gemini extensions install https://github.com/maniramezan/xcode-agent-skills-sync
 ```
 
 Restart Gemini CLI, then use `/sync-xcode-skills`. Update it after Xcode upgrades with `gemini extensions update xcode-agent-skills-sync`.
@@ -66,7 +64,7 @@ Restart OpenCode, then use `/sync-xcode-skills`.
 ### GitHub Copilot CLI
 
 ```sh
-copilot plugin marketplace add https://github.com/OWNER/REPO
+copilot plugin marketplace add https://github.com/maniramezan/xcode-agent-skills-sync
 copilot plugin install xcode-skills-sync@xcode-agent-skills-sync
 ```
 
