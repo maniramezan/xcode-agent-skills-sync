@@ -78,7 +78,7 @@ Install the portable `sync-xcode-skills` skill into every supported agent detect
 npx skills add maniramezan/xcode-agent-skills-sync --all --global
 ```
 
-The installer uses symlinks by default, so one managed copy is shared across agents. Use `--copy` if your environment does not support symlinks. Afterwards, invoke `/sync-xcode-skills` in the target agent. Refresh the installed skill when this repository changes with:
+The installer uses symlinks by default, so one managed copy is shared across agents. Use `--copy` if your environment does not support symlinks. `--all --global` can report unsupported global-skill installation for other detected tools (currently Eve and PromptScript); those messages do not affect Codex, Claude Code, Gemini CLI, OpenCode, or GitHub Copilot CLI. Afterwards, invoke `/sync-xcode-skills` in the target agent. Refresh the installed skill when this repository changes with:
 
 ```sh
 npx skills update
