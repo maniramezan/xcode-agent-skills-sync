@@ -31,7 +31,8 @@ Before committing adapter changes:
 2. Validate the Codex plugin with `python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/plugin-creator/scripts/validate_plugin.py" plugins/codex-xcode-skills-sync` when Codex is installed.
 3. Validate the Claude plugin with `claude plugin validate plugins/claude-xcode-skills-sync` when Claude Code is installed.
 4. Run `git diff --check`.
-5. Update `README.md` whenever installation, compatibility, or destination paths change.
+5. Run `npx skills add . --list` when changing the portable `sync-xcode-skills` skill; confirm it discovers exactly one skill with the expected description.
+6. Update `README.md` whenever installation, compatibility, or destination paths change.
 
 ## Security
 

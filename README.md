@@ -70,6 +70,22 @@ copilot plugin install xcode-skills-sync@xcode-agent-skills-sync
 
 Restart Copilot CLI, then use `/sync-xcode-skills`.
 
+### skills.sh
+
+Install the portable `sync-xcode-skills` skill into every supported agent detected on your machine:
+
+```sh
+npx skills add maniramezan/xcode-agent-skills-sync --all --global
+```
+
+The installer uses symlinks by default, so one managed copy is shared across agents. Use `--copy` if your environment does not support symlinks. Afterwards, invoke `/sync-xcode-skills` in the target agent. Refresh the installed skill when this repository changes with:
+
+```sh
+npx skills update
+```
+
+Because this repository is private, collaborators need GitHub access and a configured GitHub credential (for example, `GH_TOKEN`) before installing through skills.sh.
+
 ## What gets updated
 
 | Agent | Skills destination |
