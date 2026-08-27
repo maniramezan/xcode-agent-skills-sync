@@ -6,7 +6,7 @@ Portable integrations for refreshing the skills embedded in the installed Xcode:
 xcrun agent skills export --output-dir <skills-directory> --replace-existing
 ```
 
-The repository provides a native `/sync-xcode-skills` command for Codex, Claude Code, Gemini CLI, OpenCode, and GitHub Copilot CLI. Each command exports directly to that tool's personal skills directory; no Downloads staging directory is used.
+The repository provides a host-specific sync integration for Codex, Claude Code, Gemini CLI, OpenCode, and GitHub Copilot CLI. Each integration exports directly to that tool's personal skills directory; no Downloads staging directory is used.
 
 ## Requirements
 
@@ -20,6 +20,8 @@ xcrun agent skills export --help
 ```
 
 ## Install
+
+Choose one installation method for each agent. The native integrations provide the best slash-command experience; skills.sh is the portable, cross-agent alternative.
 
 ### Codex
 
@@ -54,7 +56,7 @@ Restart Claude Code, then use `/sync-xcode-skills`.
 gemini extensions install https://github.com/maniramezan/xcode-agent-skills-sync
 ```
 
-Restart Gemini CLI, then use `/sync-xcode-skills`. Update it after Xcode upgrades with `gemini extensions update xcode-agent-skills-sync`.
+Restart Gemini CLI, then use `/sync-xcode-skills`. Update the extension when this repository changes, and run the sync command after Xcode upgrades.
 
 ### OpenCode
 
@@ -91,6 +93,54 @@ npx skills update
 ```
 
 Because this repository is private, collaborators need GitHub access and a configured GitHub credential (for example, `GH_TOKEN`) before installing through skills.sh.
+
+## Keep everything up to date
+
+There are two independent updates:
+
+1. Update the integration when this repository changes.
+2. Refresh the Xcode-exported skills after installing or upgrading Xcode.
+
+### Update the integration
+
+Use the command that matches the installation method you chose:
+
+| Installation | Update command |
+| --- | --- |
+| Codex local marketplace | `git -C ~/Developer/xcode-agent-skills-sync pull --ff-only` |
+| Claude Code plugin | `claude plugin marketplace update xcode-agent-skills-sync && claude plugin update xcode-skills-sync@xcode-agent-skills-sync` |
+| Gemini CLI extension | `gemini extensions update xcode-agent-skills-sync` |
+| OpenCode symlink | `git -C <repository-clone> pull --ff-only` |
+| GitHub Copilot CLI plugin | `copilot plugin marketplace update xcode-agent-skills-sync && copilot plugin update xcode-skills-sync@xcode-agent-skills-sync` |
+| skills.sh | `npx skills update` |
+
+Restart Claude Code, Gemini CLI, or GitHub Copilot CLI after updating their integration. For OpenCode, restart the session after the linked command changes. Codex reads the local marketplace source, so start a new thread after pulling changes.
+
+### Refresh Xcode skills
+
+Run this after every Xcode install or upgrade. It replaces any skills with matching names in the selected agent's personal skills directory.
+
+| Agent | Refresh action |
+| --- | --- |
+| Codex | Terminal: `codex-sync-xcode-skills`; or ask Codex: `Use the sync-xcode-skills skill to refresh my Xcode skills.` |
+| Claude Code | `/sync-xcode-skills` |
+| Gemini CLI | `/sync-xcode-skills` |
+| OpenCode | `/sync-xcode-skills` |
+| GitHub Copilot CLI | `/sync-xcode-skills` |
+| skills.sh install | Use the action for the target agent above. |
+
+If the agent command is unavailable, run Xcode's exporter directly with the destination from the table below. For example, for Codex:
+
+```sh
+mkdir -p ~/.codex/skills
+xcrun agent skills export --output-dir ~/.codex/skills --replace-existing
+```
+
+Check the installed Xcode's exporter options at any time:
+
+```sh
+xcrun agent skills export --help
+```
 
 ## What gets updated
 
