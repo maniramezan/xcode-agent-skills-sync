@@ -1,0 +1,15 @@
+{
+  "name": "xcode-skills-sync",
+  "version": "0.1.0",
+  "description": "Refresh Codex skills from the installed Xcode.",
+  "author": { "name": "Maniramezan" },
+  "interface": {
+    "displayName": "Xcode Skills Sync",
+    "shortDescription": "Refresh skills from Xcode.",
+    "longDescription": "Adds a slash command that refreshes Codex's global skills from the installed Xcode.",
+    "developerName": "Maniramezan",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": "Refresh my Codex skills from Xcode."
+  }
+}

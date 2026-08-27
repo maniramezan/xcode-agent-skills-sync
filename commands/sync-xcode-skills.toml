@@ -1,0 +1,8 @@
+description = "Export the installed Xcode's embedded skills into Gemini CLI."
+prompt = """
+Run this shell command exactly once:
+
+!{mkdir -p "$HOME/.gemini/skills" && xcrun agent skills export --output-dir "$HOME/.gemini/skills" --replace-existing}
+
+Report the names of the exported skills. If the command fails, report the error and stop. Do not edit the current repository.
+"""

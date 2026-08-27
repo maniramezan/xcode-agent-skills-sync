@@ -1,0 +1,11 @@
+{
+  "name": "xcode-agent-skills-sync",
+  "owner": { "name": "Maniramezan" },
+  "metadata": { "description": "Refresh agent skills from the installed Xcode.", "version": "0.1.0" },
+  "plugins": [{
+    "name": "xcode-skills-sync",
+    "description": "Export the installed Xcode's skills into GitHub Copilot CLI.",
+    "version": "0.1.0",
+    "source": "./plugins/copilot-xcode-skills-sync"
+  }]
+}

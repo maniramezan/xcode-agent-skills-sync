@@ -1,0 +1,6 @@
+{
+  "name": "xcode-skills-sync",
+  "description": "Refresh Claude Code skills from the installed Xcode.",
+  "version": "0.1.0",
+  "author": { "name": "Maniramezan" }
+}

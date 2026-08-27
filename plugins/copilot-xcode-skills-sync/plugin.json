@@ -1,0 +1,8 @@
+{
+  "name": "xcode-skills-sync",
+  "description": "Refresh GitHub Copilot CLI skills from the installed Xcode.",
+  "version": "0.1.0",
+  "author": { "name": "Maniramezan" },
+  "license": "MIT",
+  "skills": "skills/"
+}

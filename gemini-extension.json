@@ -1,0 +1,5 @@
+{
+  "name": "xcode-agent-skills-sync",
+  "version": "0.1.0",
+  "description": "Refresh Gemini CLI skills from the installed Xcode."
+}

@@ -1,0 +1,10 @@
+{
+  "name": "xcode-agent-skills-sync",
+  "interface": { "displayName": "Xcode Agent Skills Sync" },
+  "plugins": [{
+    "name": "xcode-skills-sync",
+    "source": { "source": "local", "path": "./plugins/codex-xcode-skills-sync" },
+    "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+    "category": "Productivity"
+  }]
+}
