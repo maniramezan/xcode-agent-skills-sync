@@ -29,7 +29,13 @@ codex plugin marketplace add ~/Developer/xcode-agent-skills-sync
 codex plugin add xcode-skills-sync@xcode-agent-skills-sync
 ```
 
-Start a new Codex thread, then use `/sync-xcode-skills`.
+Codex Agent Skills do not appear in the `/` picker. Use the terminal command:
+
+```sh
+codex-sync-xcode-skills
+```
+
+Or, in a Codex conversation, send: `Use the sync-xcode-skills skill to refresh my Xcode skills.`
 
 Codex marketplaces currently use a local marketplace path, so cloning the repository is the portable installation step.
 
@@ -78,7 +84,7 @@ Install the portable `sync-xcode-skills` skill into every supported agent detect
 npx skills add maniramezan/xcode-agent-skills-sync --all --global
 ```
 
-The installer uses symlinks by default, so one managed copy is shared across agents. Use `--copy` if your environment does not support symlinks. `--all --global` can report unsupported global-skill installation for other detected tools (currently Eve and PromptScript); those messages do not affect Codex, Claude Code, Gemini CLI, OpenCode, or GitHub Copilot CLI. Afterwards, invoke `/sync-xcode-skills` in the target agent. Refresh the installed skill when this repository changes with:
+The installer uses symlinks by default, so one managed copy is shared across agents. Use `--copy` if your environment does not support symlinks. `--all --global` can report unsupported global-skill installation for other detected tools (currently Eve and PromptScript); those messages do not affect Codex, Claude Code, Gemini CLI, OpenCode, or GitHub Copilot CLI. In Codex, invoke it with a normal-language request to use the skill or run `codex-sync-xcode-skills`; in agents that register a native slash command, invoke `/sync-xcode-skills`. Refresh the installed skill when this repository changes with:
 
 ```sh
 npx skills update
